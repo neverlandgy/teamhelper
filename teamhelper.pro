@@ -15,14 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
     mainwindow.cpp \
     login.cpp \
-    sqlconnection.cpp
+    sqlconnection.cpp \
+    about.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
-    sqlconnection.h
+    sqlconnection.h \
+    about.h
 
 FORMS    += mainwindow.ui \
-    login.ui
+    login.ui \
+    about.ui
 
 RESOURCES += \
     res.qrc
