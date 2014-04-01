@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/extTHLogo.gif</file>
+        <file>res/extTitleTeamEffectiveness.gif</file>
+        <file>res/extTitleWelcomeTH.gif</file>
+    </qresource>
+</RCC>

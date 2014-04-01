@@ -1,24 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>713</width>
+    <height>343</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>713</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>用户</string>
+    </property>
+    <addaction name="myinfo_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>签到</string>
+    </property>
+    <addaction name="punchin_action"/>
+    <addaction name="punchout_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>项目</string>
+    </property>
+    <addaction name="addproject_action"/>
+    <addaction name="team_action"/>
+    <addaction name="teamgrade_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>管理</string>
+    </property>
+    <addaction name="perslevel_action"/>
+    <addaction name="persgrade_action"/>
+    <addaction name="jobchange_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="about_action"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="myinfo_action">
+   <property name="text">
+    <string>本人信息</string>
+   </property>
+  </action>
+  <action name="punchin_action">
+   <property name="text">
+    <string>签入</string>
+   </property>
+  </action>
+  <action name="punchout_action">
+   <property name="text">
+    <string>签出</string>
+   </property>
+  </action>
+  <action name="addproject_action">
+   <property name="text">
+    <string>新增项目</string>
+   </property>
+  </action>
+  <action name="team_action">
+   <property name="text">
+    <string>项目团队</string>
+   </property>
+  </action>
+  <action name="teamgrade_action">
+   <property name="text">
+    <string>项目打分</string>
+   </property>
+  </action>
+  <action name="perslevel_action">
+   <property name="text">
+    <string>员工评级</string>
+   </property>
+  </action>
+  <action name="persgrade_action">
+   <property name="text">
+    <string>员工打分</string>
+   </property>
+  </action>
+  <action name="jobchange_action">
+   <property name="text">
+    <string>职务变更</string>
+   </property>
+  </action>
+  <action name="about_action">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
