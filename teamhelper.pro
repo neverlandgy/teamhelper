@@ -16,16 +16,19 @@ SOURCES += main.cpp\
     mainwindow.cpp \
     login.cpp \
     sqlconnection.cpp \
-    about.cpp
+    about.cpp \
+    myinfo.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
     sqlconnection.h \
-    about.h
+    about.h \
+    myinfo.h
 
 FORMS    += mainwindow.ui \
     login.ui \
-    about.ui
+    about.ui \
+    myinfo.ui
 
 RESOURCES += \
     res.qrc

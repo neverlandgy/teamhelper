@@ -7,7 +7,7 @@ class SqlConnection : public QObject
 {
 public:
     SqlConnection();
-    bool connect();
+    bool Connect();
 };
 
 #endif // SQLCONNECTION_H

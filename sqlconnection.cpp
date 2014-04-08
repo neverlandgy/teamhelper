@@ -7,7 +7,8 @@ SqlConnection::SqlConnection()
 
 }
 
-bool SqlConnection::connect()
+//数据库连接
+bool SqlConnection::Connect()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");

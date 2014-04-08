@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    QTextCodec *codec = QTextCodec::codecForName("GB2312");
     QTextCodec::setCodecForLocale(codec);
     QTextCodec::setCodecForCStrings(codec);
     QTextCodec::setCodecForTr(codec);
 
     SqlConnection sql;
-    if(!sql.connect())
+    if(!sql.Connect())
     {
         return app.exec();
     }

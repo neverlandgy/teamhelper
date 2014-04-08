@@ -18,6 +18,10 @@ public:
 private slots:
     void on_about_action_triggered();
 
+    void on_myinfo_action_triggered();
+
+    void on_tabWidget_tabCloseRequested(int index);
+
 private:
     Ui::MainWindow *ui;
 };
