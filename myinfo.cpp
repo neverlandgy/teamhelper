@@ -28,13 +28,12 @@ void MyInfo::QureyPers()
     QDate workdate = querypers.value(2).toDate();
     QString sex = querypers.value(3).toString();
     int level = querypers.value(4).toInt();
-    QMessageBox::about(NULL,name,job);
 
     ui->label_6->setText(name);
     ui->label_7->setText(job);
-    //ui->label_8->setText(workdate);
+    ui->label_8->setText(workdate.toString());
     ui->label_9->setText(sex);
-    //ui->label_10->setText(level);
+//    ui->label_10->setText(level);
 
 
 }
