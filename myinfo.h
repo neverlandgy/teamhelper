@@ -2,6 +2,9 @@
 #define MYINFO_H
 
 #include <QFrame>
+#include <QDate>
+#include <QSqlQuery>
+#include <QMessageBox>
 
 namespace Ui {
 class MyInfo;

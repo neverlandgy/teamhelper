@@ -1,8 +1,6 @@
 #include "myinfo.h"
 #include "ui_myinfo.h"
-#include <QDate>
-#include <QSqlQuery>
-#include <QMessageBox>
+
 
 MyInfo::MyInfo(QWidget *parent) :
     QFrame(parent),
@@ -23,6 +21,7 @@ void MyInfo::QureyPers()
     querypers.exec();
     querypers.next();
 
+//TODO 雏形，待修改，需要更详细的信息
     QString name = querypers.value(0).toString();
     QString job = querypers.value(1).toString();
     QDate workdate = querypers.value(2).toDate();

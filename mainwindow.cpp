@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "about.h"
 #include "myinfo.h"
+#include "punchin.h"
+#include "punchout.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,7 +24,14 @@ void MainWindow::on_about_action_triggered()
     about.exec();
 }
 
-//ÏÔÊ¾¸öÈËÐÅÏ¢
+//¹Ø±ÕTabÒ³Ç©
+void MainWindow::on_tabWidget_tabCloseRequested(int index)
+{
+    index = ui->tabWidget->currentIndex() ;
+    ui->tabWidget->removeTab(index);
+}
+
+//ÏÔÊ¾¸öÈËÐÅÏ¢Ò³Ç©
 void MainWindow::on_myinfo_action_triggered()
 {
 
@@ -35,9 +44,25 @@ void MainWindow::on_myinfo_action_triggered()
 
 }
 
-//¹Ø±ÕÒ³Ç©
-void MainWindow::on_tabWidget_tabCloseRequested(int index)
+//ÏÔÊ¾Ç©µ½Ò³Ç©
+void MainWindow::on_punchin_action_triggered()
 {
-    index = ui->tabWidget->currentIndex() ;
-    ui->tabWidget->removeTab(index);
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab,"Ç©µ½");
+
+    PunchIn *punchin;
+    punchin = new PunchIn(newTab);
+    punchin->QueryTask(1);
+
+}
+
+//ÏÔÊ¾Ç©ÍËÒ³Ç©
+void MainWindow::on_punchout_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab,"Ç©ÍË");
+
+    PunchOut *punchout;
+    punchout = new PunchOut(newTab);
+    punchout->QueryTask(1);
 }

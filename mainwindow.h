@@ -16,11 +16,15 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_tabWidget_tabCloseRequested(int index);
+
     void on_about_action_triggered();
 
     void on_myinfo_action_triggered();
 
-    void on_tabWidget_tabCloseRequested(int index);
+    void on_punchin_action_triggered();
+
+    void on_punchout_action_triggered();
 
 private:
     Ui::MainWindow *ui;

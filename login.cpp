@@ -33,7 +33,7 @@ void Login::on_pushButton_login_clicked()
         QString passwd;
         username = ui->lineEdit_username->text();
         passwd = ui->lineEdit_passwd->text();
-        //TODO 权限标志的获取
+//TODO 权限标志的获取
         QSqlQuery query;
         query.prepare("select password from login where loginid = ?");
         query.addBindValue(username);
@@ -45,13 +45,6 @@ void Login::on_pushButton_login_clicked()
         }else{
             this->close();
         }
-//        QSqlQuery query1;
-//        query1.prepare("SELECT persname, jobtypcd FROM pers where persid = 1");
-//        query1.exec();
-//        query1.next();
-//        QString name = query1.value(0).toString();
-//        QString job = query1.value(1).toString();
-//        QMessageBox::about(NULL,name,job);
     }
 }
 

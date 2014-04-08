@@ -17,18 +17,24 @@ SOURCES += main.cpp\
     login.cpp \
     sqlconnection.cpp \
     about.cpp \
-    myinfo.cpp
+    myinfo.cpp \
+    punchin.cpp \
+    punchout.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
     sqlconnection.h \
     about.h \
-    myinfo.h
+    myinfo.h \
+    punchin.h \
+    punchout.h
 
 FORMS    += mainwindow.ui \
     login.ui \
     about.ui \
-    myinfo.ui
+    myinfo.ui \
+    punchin.ui \
+    punchout.ui
 
 RESOURCES += \
     res.qrc
