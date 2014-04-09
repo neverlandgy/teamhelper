@@ -4,12 +4,14 @@
 #include "myinfo.h"
 #include "punchin.h"
 #include "punchout.h"
+#include "addproject.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -36,33 +38,50 @@ void MainWindow::on_myinfo_action_triggered()
 {
 
     QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab,"个人信息");
+    ui->tabWidget->addTab(newTab, "个人信息");
+
 
     MyInfo *myinfo;
     myinfo = new MyInfo(newTab);
     myinfo->QureyPers();
 
+    ui->tabWidget->setCurrentWidget(newTab);
 }
 
 //显示签到页签
 void MainWindow::on_punchin_action_triggered()
 {
     QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab,"签到");
+    ui->tabWidget->addTab(newTab, "签到");
 
     PunchIn *punchin;
     punchin = new PunchIn(newTab);
     punchin->QueryTask(1);
 
+    ui->tabWidget->setCurrentWidget(newTab);
 }
 
 //显示签退页签
 void MainWindow::on_punchout_action_triggered()
 {
     QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab,"签退");
+    ui->tabWidget->addTab(newTab, "签退");
 
     PunchOut *punchout;
     punchout = new PunchOut(newTab);
     punchout->QueryTask(1);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+}
+
+//显示新增项目页签
+void MainWindow::on_addproject_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "新增项目");
+
+    AddProject *addproject;
+    addproject = new AddProject(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
 }

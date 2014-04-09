@@ -36,6 +36,7 @@ void PunchOut::QueryTask(int persid)
         name += query.value(0).toString() + "\n" ;
     }
     ui->textBrowser->insertPlainText(name);
+    //TODO 表格形式显示任务列表，并可以提交完成的任务
 }
 
 void PunchOut::on_pushButton_clicked()

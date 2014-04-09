@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     about.cpp \
     myinfo.cpp \
     punchin.cpp \
-    punchout.cpp
+    punchout.cpp \
+    addproject.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -27,14 +28,16 @@ HEADERS  += mainwindow.h \
     about.h \
     myinfo.h \
     punchin.h \
-    punchout.h
+    punchout.h \
+    addproject.h
 
 FORMS    += mainwindow.ui \
     login.ui \
     about.ui \
     myinfo.ui \
     punchin.ui \
-    punchout.ui
+    punchout.ui \
+    addproject.ui
 
 RESOURCES += \
     res.qrc

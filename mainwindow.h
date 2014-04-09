@@ -26,6 +26,8 @@ private slots:
 
     void on_punchout_action_triggered();
 
+    void on_addproject_action_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

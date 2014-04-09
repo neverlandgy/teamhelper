@@ -37,6 +37,8 @@ void PunchIn::QueryTask(int persid)
         name += query.value(0).toString() + "\n" ;
     }
     ui->textBrowser->insertPlainText(name);
+//TODO    表格形式显示任务
+//TODO    过期任务红色显示
 }
 
 void PunchIn::on_pushButton_clicked()
