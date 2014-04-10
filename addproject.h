@@ -15,7 +15,6 @@ class AddProject : public QFrame
 public:
     explicit AddProject(QWidget *parent = 0);
     ~AddProject();
-    void commit();
 
 private slots:
     void on_commit_clicked();
