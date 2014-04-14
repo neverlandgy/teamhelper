@@ -1,5 +1,6 @@
 #include "team.h"
 #include "ui_team.h"
+#include <QDebug>
 
 
 Team::Team(QWidget *parent) :
@@ -44,10 +45,41 @@ void Team::on_rightButton_clicked()
 void Team::moveCurrentItem(DragListsWidget *source,
                                     DragListsWidget *target)
 {
+    QSqlQuery query_pers;
+    query_pers.prepare("select persid from pers where persname = ?");
+    query_pers.addBindValue(source->currentItem()->text());
+    query_pers.exec();
+    query_pers.next();
+    int persid = query_pers.value(0).toInt();
+    qDebug("qqq111");
+
     if (source->currentItem()) {
+        if(source == ui->projectB){
+            qDebug("qqq");
+            QSqlQuery query;
+            query.prepare("insert into workreg values (null, ?, ?)");
+            query.addBindValue(1);
+            query.addBindValue(persid);
+            query.exec();
+        }
+        else{
+            qDebug("111");
+
+            QSqlQuery query;
+            query.prepare("delete from workreg where persid = ? and projectid = ? ");
+            query.addBindValue(1);
+            query.addBindValue(persid);
+            query.exec();
+        }
         QListWidgetItem *newItem = source->currentItem()->clone();
         target->addItem(newItem);
         target->setCurrentItem(newItem);
         delete source->currentItem();
+
     }
+}
+
+void Team::on_pushButton_clicked()
+{
+
 }

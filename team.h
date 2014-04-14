@@ -21,6 +21,9 @@ public slots:
     void on_leftButton_clicked();
     void on_rightButton_clicked();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Team *ui;
     void moveCurrentItem(DragListsWidget *source, DragListsWidget *target);

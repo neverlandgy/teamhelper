@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     punchout.cpp \
     addproject.cpp \
     team.cpp \
-    draglistswidget.cpp
+    draglistswidget.cpp \
+    projectgrade.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -33,7 +34,8 @@ HEADERS  += mainwindow.h \
     punchout.h \
     addproject.h \
     team.h \
-    draglistswidget.h
+    draglistswidget.h \
+    projectgrade.h
 
 FORMS    += mainwindow.ui \
     login.ui \
@@ -42,7 +44,8 @@ FORMS    += mainwindow.ui \
     punchin.ui \
     punchout.ui \
     addproject.ui \
-    team.ui
+    team.ui \
+    projectgrade.ui
 
 RESOURCES += \
     res.qrc
