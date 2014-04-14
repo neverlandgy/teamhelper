@@ -51,11 +51,9 @@ void Team::moveCurrentItem(DragListsWidget *source,
     query_pers.exec();
     query_pers.next();
     int persid = query_pers.value(0).toInt();
-    qDebug("qqq111");
 
     if (source->currentItem()) {
         if(source == ui->projectB){
-            qDebug("qqq");
             QSqlQuery query;
             query.prepare("insert into workreg values (null, ?, ?)");
             query.addBindValue(1);
@@ -63,8 +61,6 @@ void Team::moveCurrentItem(DragListsWidget *source,
             query.exec();
         }
         else{
-            qDebug("111");
-
             QSqlQuery query;
             query.prepare("delete from workreg where persid = ? and projectid = ? ");
             query.addBindValue(1);
