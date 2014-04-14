@@ -28,7 +28,7 @@ void PunchOut::UpdateTime()
 void PunchOut::QueryTask(int persid)
 {
     QSqlQuery query;
-    query.prepare("SELECT taskdesc, startdate, enddate, finishdate FROM task where persid = ? and startdate < curdate() and enddate > curdate() and finishdate is null");
+    query.prepare("SELECT taskdesc, startdate, enddate, finishdate FROM task where persid = ? and startdate <= curdate() and enddate >= curdate() and finishdate is null");
     query.addBindValue(persid);
     query.exec();
     QString name;
@@ -36,7 +36,7 @@ void PunchOut::QueryTask(int persid)
         name += query.value(0).toString() + "\n" ;
     }
     ui->textBrowser->insertPlainText(name);
-    //TODO 表格形式显示任务列表，并可以提交完成的任务
+//TODO 表格形式显示任务列表，并可以提交完成的任务
 }
 
 void PunchOut::on_pushButton_clicked()

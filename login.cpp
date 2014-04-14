@@ -34,6 +34,7 @@ void Login::on_pushButton_login_clicked()
         username = ui->lineEdit_username->text();
         passwd = ui->lineEdit_passwd->text();
 //TODO 权限标志的获取
+//TODO 全局变量
         QSqlQuery query;
         query.prepare("select password from login where loginid = ?");
         query.addBindValue(username);

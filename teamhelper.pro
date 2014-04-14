@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     myinfo.cpp \
     punchin.cpp \
     punchout.cpp \
-    addproject.cpp
+    addproject.cpp \
+    team.cpp \
+    draglistswidget.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -29,7 +31,9 @@ HEADERS  += mainwindow.h \
     myinfo.h \
     punchin.h \
     punchout.h \
-    addproject.h
+    addproject.h \
+    team.h \
+    draglistswidget.h
 
 FORMS    += mainwindow.ui \
     login.ui \
@@ -37,7 +41,8 @@ FORMS    += mainwindow.ui \
     myinfo.ui \
     punchin.ui \
     punchout.ui \
-    addproject.ui
+    addproject.ui \
+    team.ui
 
 RESOURCES += \
     res.qrc

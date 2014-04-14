@@ -5,6 +5,7 @@
 #include "punchin.h"
 #include "punchout.h"
 #include "addproject.h"
+#include "team.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -82,6 +83,18 @@ void MainWindow::on_addproject_action_triggered()
 
     AddProject *addproject;
     addproject = new AddProject(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+}
+
+//显示项目团队页签
+void MainWindow::on_team_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "新增项目");
+
+    Team *team;
+    team = new Team(newTab);
 
     ui->tabWidget->setCurrentWidget(newTab);
 }
