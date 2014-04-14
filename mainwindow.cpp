@@ -6,6 +6,7 @@
 #include "punchout.h"
 #include "addproject.h"
 #include "team.h"
+#include "projectgrade.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -97,4 +98,18 @@ void MainWindow::on_team_action_triggered()
     team = new Team(newTab);
 
     ui->tabWidget->setCurrentWidget(newTab);
+}
+
+
+//显示项目打分页签
+void MainWindow::on_teamgrade_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "项目打分");
+
+    ProjectGrade *projectgrade;
+    projectgrade = new ProjectGrade(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+
 }

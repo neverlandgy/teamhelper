@@ -30,6 +30,8 @@ private slots:
 
     void on_team_action_triggered();
 
+    void on_teamgrade_action_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
