@@ -67,6 +67,7 @@ void Team::moveCurrentItem(DragListsWidget *source,
             query.addBindValue(persid);
             query.exec();
         }
+//TODO 点击按钮可以插入数据库，还要实现拖动插入数据库
         QListWidgetItem *newItem = source->currentItem()->clone();
         target->addItem(newItem);
         target->setCurrentItem(newItem);
