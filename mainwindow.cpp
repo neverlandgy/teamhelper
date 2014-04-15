@@ -1,12 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "about.h"
-#include "myinfo.h"
-#include "punchin.h"
-#include "punchout.h"
-#include "addproject.h"
-#include "team.h"
-#include "projectgrade.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -58,7 +51,7 @@ void MainWindow::on_punchin_action_triggered()
 
     PunchIn *punchin;
     punchin = new PunchIn(newTab);
-    punchin->QueryTask(1);
+    punchin->QueryTask(login_persid);
 
     ui->tabWidget->setCurrentWidget(newTab);
 }
@@ -71,7 +64,7 @@ void MainWindow::on_punchout_action_triggered()
 
     PunchOut *punchout;
     punchout = new PunchOut(newTab);
-    punchout->QueryTask(1);
+    punchout->QueryTask(login_persid);
 
     ui->tabWidget->setCurrentWidget(newTab);
 }
@@ -112,4 +105,52 @@ void MainWindow::on_teamgrade_action_triggered()
 
     ui->tabWidget->setCurrentWidget(newTab);
 
+}
+
+//显示员工评级页签
+void MainWindow::on_perslevel_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "员工管理");
+
+    PersLevel *perslevel;
+    perslevel = new PersLevel(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+}
+
+//显示员工打分页签
+void MainWindow::on_persgrade_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "员工打分");
+
+    PersGrade *persgrade;
+    persgrade = new PersGrade(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+}
+
+//显示任务分配页签
+void MainWindow::on_task_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "员工打分");
+
+    Task *task;
+    task = new Task(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
+}
+
+//显示工资发放页签
+void MainWindow::on_salary_action_triggered()
+{
+    QWidget *newTab = new QWidget(ui->tabWidget);
+    ui->tabWidget->addTab(newTab, "工资发放");
+
+    Salary *salary;
+    salary = new Salary(newTab);
+
+    ui->tabWidget->setCurrentWidget(newTab);
 }

@@ -23,7 +23,11 @@ SOURCES += main.cpp\
     addproject.cpp \
     team.cpp \
     draglistswidget.cpp \
-    projectgrade.cpp
+    projectgrade.cpp \
+    perslevel.cpp \
+    persgrade.cpp \
+    task.cpp \
+    salary.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -35,7 +39,12 @@ HEADERS  += mainwindow.h \
     addproject.h \
     team.h \
     draglistswidget.h \
-    projectgrade.h
+    projectgrade.h \
+    perslevel.h \
+    persgrade.h \
+    task.h \
+    salary.h \
+    extern.h
 
 FORMS    += mainwindow.ui \
     login.ui \
@@ -45,7 +54,11 @@ FORMS    += mainwindow.ui \
     punchout.ui \
     addproject.ui \
     team.ui \
-    projectgrade.ui
+    projectgrade.ui \
+    perslevel.ui \
+    persgrade.ui \
+    task.ui \
+    salary.ui
 
 RESOURCES += \
     res.qrc

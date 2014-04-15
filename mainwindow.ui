@@ -101,8 +101,8 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="perslevel_action"/>
     <addaction name="persgrade_action"/>
-    <addaction name="jobchange_action"/>
-    <addaction name="action_task"/>
+    <addaction name="task_action"/>
+    <addaction name="salary_action"/>
    </widget>
    <widget class="QMenu" name="menu_help">
     <property name="title">
@@ -149,7 +149,10 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="perslevel_action">
    <property name="text">
-    <string>员工评级</string>
+    <string>员工管理</string>
+   </property>
+   <property name="toolTip">
+    <string>员工管理</string>
    </property>
   </action>
   <action name="persgrade_action">
@@ -157,22 +160,25 @@ p, li { white-space: pre-wrap; }
     <string>员工打分</string>
    </property>
   </action>
-  <action name="jobchange_action">
-   <property name="text">
-    <string>职务变更</string>
-   </property>
-  </action>
   <action name="about_action">
    <property name="text">
     <string>关于</string>
    </property>
   </action>
-  <action name="action_task">
+  <action name="task_action">
    <property name="text">
     <string>任务分配</string>
    </property>
    <property name="toolTip">
     <string>任务分配</string>
+   </property>
+  </action>
+  <action name="salary_action">
+   <property name="text">
+    <string>工资发放</string>
+   </property>
+   <property name="toolTip">
+    <string>工资发放</string>
    </property>
   </action>
  </widget>

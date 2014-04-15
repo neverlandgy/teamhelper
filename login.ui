@@ -89,7 +89,7 @@
    </property>
    <item>
     <property name="text">
-     <string>员工</string>
+     <string>正常</string>
     </property>
    </item>
    <item>
@@ -103,12 +103,12 @@
     <rect>
      <x>100</x>
      <y>165</y>
-     <width>161</width>
+     <width>181</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;账号或密码错误&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
