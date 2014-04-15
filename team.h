@@ -4,6 +4,9 @@
 #include <QFrame>
 #include "draglistswidget.h"
 #include <QSqlQuery>
+#include "extern.h"
+
+
 
 namespace Ui {
 class Team;

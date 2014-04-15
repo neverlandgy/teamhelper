@@ -5,6 +5,7 @@
 #include <QDate>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include "extern.h"
 
 namespace Ui {
 class MyInfo;

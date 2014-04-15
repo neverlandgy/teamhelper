@@ -2,6 +2,9 @@
 #define LOGIN_H
 
 #include <QDialog>
+#include <QMessageBox>
+#include <QSqlQuery>
+#include "extern.h"
 
 namespace Ui {
 class Login;

@@ -4,6 +4,7 @@
 #include <QFrame>
 #include <QTimer>
 #include <QSqlQuery>
+#include "extern.h"
 
 namespace Ui {
 class PunchOut;

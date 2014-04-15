@@ -1,8 +1,8 @@
 ﻿#include "login.h"
 #include "ui_login.h"
-#include <QMessageBox>
-#include <QSqlQuery>
-#include <QDebug>
+
+QString login_mode;
+int login_persid;
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -10,7 +10,6 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lineEdit_username->setFocus();
-    ui->label_error->setHidden(true);
 }
 
 Login::~Login()
@@ -31,15 +30,20 @@ void Login::on_pushButton_login_clicked()
     }else{
         QString username;
         QString passwd;
+
+
         username = ui->lineEdit_username->text();
         passwd = ui->lineEdit_passwd->text();
-//TODO 权限标志的获取
+        login_mode = ui->comboBox->currentText();
 //TODO 全局变量
         QSqlQuery query;
-        query.prepare("select password from login where loginid = ?");
+        query.prepare("select password, persid from login where loginid = ? and mode = ?");
         query.addBindValue(username);
+        query.addBindValue(login_mode);
         query.exec();
         query.next();
+
+        login_persid = query.value(1).toInt();
         if(query.value(0).toString() != passwd)
         {
             QMessageBox::information(this, tr("错误"), tr("用户名或密码错误，请重新输入"), QMessageBox::Ok);
@@ -53,4 +57,5 @@ void Login::on_pushButton_login_clicked()
 void Login::on_pushButton_quit_clicked()
 {
     this->close();
+
 }

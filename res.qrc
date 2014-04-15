@@ -4,7 +4,7 @@
         <file>res/extTitleTeamEffectiveness.gif</file>
         <file>res/extTitleWelcomeTH.gif</file>
         <file>res/leftarrow.png</file>
-        <file>res/person.png</file>
         <file>res/rightarrow.png</file>
+        <file>res/person.png</file>
     </qresource>
 </RCC>

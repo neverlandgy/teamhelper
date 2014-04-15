@@ -2,6 +2,7 @@
 #define PROJECTGRADE_H
 
 #include <QFrame>
+#include "extern.h"
 
 namespace Ui {
 class ProjectGrade;
