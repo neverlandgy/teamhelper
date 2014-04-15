@@ -44,7 +44,9 @@ void PunchIn::QueryTask(int persid)
 void PunchIn::on_pushButton_clicked()
 {
     QSqlQuery query;
-    query.exec("insert into punchreg (date, persid, intime) values (curdate(), 1, curtime())");
+    query.prepare("insert into punchreg (date, persid, intime) values (curdate(), ?, curtime())");
+    query.addBindValue(login_persid);
+    query.exec();
 }
 
 //TODO 显示是否已签到

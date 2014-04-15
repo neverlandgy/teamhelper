@@ -42,5 +42,7 @@ void PunchOut::QueryTask(int persid)
 void PunchOut::on_pushButton_clicked()
 {
     QSqlQuery query;
-    query.exec("update punchreg set outtime = curtime() where persid = 1 and date = curdate() ");
+    query.prepare("update punchreg set outtime = curtime() where persid = ? and date = curdate() ");
+    query.addBindValue(login_persid);
+    query.exec();
 }
