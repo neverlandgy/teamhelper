@@ -1,5 +1,6 @@
 #include "punchin.h"
 #include "ui_punchin.h"
+#include <QDebug>
 
 PunchIn::PunchIn(QWidget *parent) :
     QFrame(parent),
@@ -7,12 +8,26 @@ PunchIn::PunchIn(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->label_warring->hide();
     ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
 
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(UpdateTime()));
     //开启定时器
     timer->start(1000);
+
+    //TODO 显示是否已签到
+    QSqlQuery query;
+    query.prepare("select * from punchreg where date = curdate() and persid = ?");
+    query.addBindValue(login_persid);
+    query.exec();
+
+    if(query.next()){
+//    if(query.value(0).toInt() != 0){
+        ui->pushButton->hide();
+        ui->label_warring->show();
+//    }
+    }
 
 }
 
@@ -49,9 +64,5 @@ void PunchIn::on_pushButton_clicked()
     query.exec();
 }
 
-//TODO 显示是否已签到
-//void PunchIn::QueryPunchReg()
-//{
-//    QSqlQuery query;
-//    query.prepare("select count(*) from punchreg where date = curdate() and persid = 1");
-//}
+
+
