@@ -7,12 +7,26 @@ PunchOut::PunchOut(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->label_warring->hide();
     ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
 
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(UpdateTime()));
     //开启定时器
     timer->start(1000);
+
+    //TODO 显示是否已签退
+    QSqlQuery query;
+    query.prepare("select count(*) from punchreg where date = curdate() and persid = ? and outtime is not null");
+    query.addBindValue(login_persid);
+    query.exec();
+
+    if(query.next()){
+        if(query.value(0).toInt() != 0){
+            ui->pushButton->hide();
+            ui->label_warring->show();
+        }
+    }
 }
 
 PunchOut::~PunchOut()

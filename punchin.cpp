@@ -18,17 +18,16 @@ PunchIn::PunchIn(QWidget *parent) :
 
     //TODO 显示是否已签到
     QSqlQuery query;
-    query.prepare("select * from punchreg where date = curdate() and persid = ?");
+    query.prepare("select count(*) from punchreg where date = curdate() and persid = ?");
     query.addBindValue(login_persid);
     query.exec();
 
     if(query.next()){
-//    if(query.value(0).toInt() != 0){
-        ui->pushButton->hide();
-        ui->label_warring->show();
-//    }
+        if(query.value(0).toInt() != 0){
+            ui->pushButton->hide();
+            ui->label_warring->show();
+        }
     }
-
 }
 
 PunchIn::~PunchIn()
