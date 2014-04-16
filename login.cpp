@@ -1,8 +1,9 @@
 ﻿#include "login.h"
 #include "ui_login.h"
 
-QString login_mode;
 int login_persid;
+QString login_mode;
+QString login_jobtyp;
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -31,19 +32,19 @@ void Login::on_pushButton_login_clicked()
         QString username;
         QString passwd;
 
-
         username = ui->lineEdit_username->text();
         passwd = ui->lineEdit_passwd->text();
         login_mode = ui->comboBox->currentText();
-//TODO 全局变量
+
         QSqlQuery query;
-        query.prepare("select password, persid from login where loginid = ? and mode = ?");
+        query.prepare("select l.password, p.persid, p.jobtyp from login as l, pers as p where l.persid=p.persid and loginid = ? and mode = ?");
         query.addBindValue(username);
         query.addBindValue(login_mode);
         query.exec();
         query.next();
 
         login_persid = query.value(1).toInt();
+        login_jobtyp = query.value(2).toString();
         if(query.value(0).toString() != passwd)
         {
             QMessageBox::information(this, tr("错误"), tr("用户名或密码错误，请重新输入"), QMessageBox::Ok);
@@ -57,5 +58,4 @@ void Login::on_pushButton_login_clicked()
 void Login::on_pushButton_quit_clicked()
 {
     this->close();
-
 }

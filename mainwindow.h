@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include "about.h"
 #include "myinfo.h"
 #include "punchin.h"

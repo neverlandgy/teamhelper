@@ -9,7 +9,7 @@ AddProject::AddProject(QWidget *parent) :
 {
     ui->setupUi(this);
     QSqlQueryModel *qmodel=new QSqlQueryModel();
-    qmodel->setQuery("select persname from pers");
+    qmodel->setQuery("select persname from pers where jobtyp = '项目经理'");
     ui->comboBox_leader->setModel(qmodel);
 }
 

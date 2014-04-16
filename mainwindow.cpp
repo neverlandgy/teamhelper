@@ -72,31 +72,40 @@ void MainWindow::on_punchout_action_triggered()
 //显示新增项目页签
 void MainWindow::on_addproject_action_triggered()
 {
-    QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab, "新增项目");
+    if(login_mode == "管理"){
+        QWidget *newTab = new QWidget(ui->tabWidget);
+        ui->tabWidget->addTab(newTab, "新增项目");
 
-    AddProject *addproject;
-    addproject = new AddProject(newTab);
+        AddProject *addproject;
+        addproject = new AddProject(newTab);
 
-    ui->tabWidget->setCurrentWidget(newTab);
+        ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 //显示项目团队页签
 void MainWindow::on_team_action_triggered()
 {
-    QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab, "新增项目");
+    if(login_mode == "管理" ){
+        QWidget *newTab = new QWidget(ui->tabWidget);
+        ui->tabWidget->addTab(newTab, "新增项目");
 
-    Team *team;
-    team = new Team(newTab);
+        Team *team;
+        team = new Team(newTab);
 
-    ui->tabWidget->setCurrentWidget(newTab);
+        ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 
 //显示项目打分页签
 void MainWindow::on_teamgrade_action_triggered()
 {
+    if(login_mode == "管理" ){
     QWidget *newTab = new QWidget(ui->tabWidget);
     ui->tabWidget->addTab(newTab, "项目打分");
 
@@ -104,12 +113,15 @@ void MainWindow::on_teamgrade_action_triggered()
     projectgrade = new ProjectGrade(newTab);
 
     ui->tabWidget->setCurrentWidget(newTab);
-
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 //显示员工评级页签
 void MainWindow::on_perslevel_action_triggered()
 {
+    if(login_mode == "管理" ){
     QWidget *newTab = new QWidget(ui->tabWidget);
     ui->tabWidget->addTab(newTab, "员工管理");
 
@@ -117,11 +129,15 @@ void MainWindow::on_perslevel_action_triggered()
     perslevel = new PersLevel(newTab);
 
     ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 //显示员工打分页签
 void MainWindow::on_persgrade_action_triggered()
 {
+    if(login_mode == "管理" ){
     QWidget *newTab = new QWidget(ui->tabWidget);
     ui->tabWidget->addTab(newTab, "员工打分");
 
@@ -129,28 +145,39 @@ void MainWindow::on_persgrade_action_triggered()
     persgrade = new PersGrade(newTab);
 
     ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 //显示任务分配页签
 void MainWindow::on_task_action_triggered()
 {
-    QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab, "员工打分");
+    if(login_mode == "管理" ){
+        QWidget *newTab = new QWidget(ui->tabWidget);
+        ui->tabWidget->addTab(newTab, "员工打分");
 
-    Task *task;
-    task = new Task(newTab);
+        Task *task;
+        task = new Task(newTab);
 
-    ui->tabWidget->setCurrentWidget(newTab);
+        ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }
 
 //显示工资发放页签
 void MainWindow::on_salary_action_triggered()
 {
-    QWidget *newTab = new QWidget(ui->tabWidget);
-    ui->tabWidget->addTab(newTab, "工资发放");
+    if(login_mode == "管理" ){
+        QWidget *newTab = new QWidget(ui->tabWidget);
+        ui->tabWidget->addTab(newTab, "工资发放");
 
-    Salary *salary;
-    salary = new Salary(newTab);
+        Salary *salary;
+        salary = new Salary(newTab);
 
-    ui->tabWidget->setCurrentWidget(newTab);
+        ui->tabWidget->setCurrentWidget(newTab);
+    }else{
+        QMessageBox::information(this, tr("错误"), tr("请使用管理模式登录"), QMessageBox::Ok);
+    }
 }

@@ -16,7 +16,7 @@ PunchIn::PunchIn(QWidget *parent) :
     //开启定时器
     timer->start(1000);
 
-    //TODO 显示是否已签到
+    // 显示是否已签到
     QSqlQuery query;
     query.prepare("select count(*) from punchreg where date = curdate() and persid = ?");
     query.addBindValue(login_persid);
