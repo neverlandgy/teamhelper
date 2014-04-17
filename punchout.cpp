@@ -15,7 +15,7 @@ PunchOut::PunchOut(QWidget *parent) :
     //开启定时器
     timer->start(1000);
 
-    //TODO 显示是否已签退
+    // 显示是否已签退
     QSqlQuery query;
     query.prepare("select count(*) from punchreg where date = curdate() and persid = ? and outtime is not null");
     query.addBindValue(login_persid);
