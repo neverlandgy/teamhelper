@@ -32,17 +32,22 @@
     <property name="topMargin">
      <number>0</number>
     </property>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>项目名称：</string>
-      </property>
-     </widget>
+    <item row="5" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>项目描述：</string>
+    <item row="4" column="1">
+     <widget class="QPlainTextEdit" name="plainTextEdit_desc"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QDateEdit" name="dateEdit_end">
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -85,11 +90,46 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>项目名称：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>项目描述：</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QPlainTextEdit" name="plainTextEdit_desc"/>
+     <widget class="QDateEdit" name="dateEdit_start">
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>开始时间：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>结束时间：</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

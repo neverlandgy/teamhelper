@@ -19,6 +19,8 @@ public:
 private slots:
     void on_commit_clicked();
 
+    void on_dateEdit_start_dateChanged();
+
 private:
     Ui::AddProject *ui;
 };
