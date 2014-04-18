@@ -1,5 +1,6 @@
 #include "projectgrade.h"
 #include "ui_projectgrade.h"
+#include <QDebug>
 
 ProjectGrade::ProjectGrade(QWidget *parent) :
     QFrame(parent),
@@ -40,6 +41,10 @@ void ProjectGrade::on_pushButton_clicked()
     query.addBindValue(grade);
     query.exec();
 
+    QSqlQuery query1;
+    query1.prepare("update project set finishdate = curdate() where projectname = ?");
+    query1.addBindValue(projectname);
+    query1.exec();
 }
 
 void ProjectGrade::on_horizontalSlider_Diff_valueChanged()
