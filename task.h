@@ -2,6 +2,9 @@
 #define TASK_H
 
 #include <QFrame>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QMessageBox>
 #include "extern.h"
 
 
@@ -16,6 +19,11 @@ class Task : public QFrame
 public:
     explicit Task(QWidget *parent = 0);
     ~Task();
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_dateEdit_start_dateChanged();
 
 private:
     Ui::Task *ui;

@@ -45,6 +45,7 @@ void PersLevel::on_pushButton_commit_clicked()
 void PersLevel::on_pushButton_revert_clicked()
 {
     model->revertAll(); //撤销修改
+    QMessageBox::warning(this, tr("撤销成功"),tr("撤销成功"));
 }
 
 void PersLevel::on_pushButton_delete_clicked()
