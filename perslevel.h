@@ -23,11 +23,13 @@ public:
 private slots:
     void on_pushButton_commit_clicked();
 
-    void on_pushButton_revert_clicked();
+
 
     void on_pushButton_delete_clicked();
 
     void on_pushButton_add_clicked();
+
+    void on_pushButton_revert_clicked();
 
 private:
     Ui::PersLevel *ui;

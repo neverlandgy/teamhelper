@@ -42,11 +42,7 @@ void PersLevel::on_pushButton_commit_clicked()
     }
 }
 
-void PersLevel::on_pushButton_revert_clicked()
-{
-    model->revertAll(); //撤销修改
-    QMessageBox::warning(this, tr("撤销成功"),tr("撤销成功"));
-}
+
 
 void PersLevel::on_pushButton_delete_clicked()
 {
@@ -68,4 +64,11 @@ void PersLevel::on_pushButton_add_clicked()
     model->insertRow(rowNum); //添加一行
     model->setData(model->index(rowNum,0),persid);
     //model->submitAll(); //可以直接提交
+}
+
+void PersLevel::on_pushButton_revert_clicked()
+{
+    model->revertAll(); //撤销修改
+    QMessageBox::warning(this, tr("撤销成功"),tr("撤销成功"));
+
 }

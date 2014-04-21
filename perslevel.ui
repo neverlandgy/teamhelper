@@ -55,19 +55,6 @@
     <string>撤销</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_revert_2">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>310</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>撤销</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_delete">
    <property name="geometry">
     <rect>
