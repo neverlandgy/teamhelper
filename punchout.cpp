@@ -1,6 +1,8 @@
 #include "punchout.h"
 #include "ui_punchout.h"
-#include <QSqlTableModel>
+#include <QMessageBox>
+#include <QDate>
+#include <QSqlError>
 
 PunchOut::PunchOut(QWidget *parent) :
     QFrame(parent),
@@ -51,12 +53,12 @@ void PunchOut::QueryTask(int persid)
 //        name += query.value(0).toString() + "\n" ;
 //    }
 //    ui->textBrowser->insertPlainText(name);
-//TODO 表格形式显示任务列表，并可以提交完成的任务
 
-    QSqlTableModel *qmodel=new QSqlTableModel();
+
+    qmodel=new QSqlTableModel();
     qmodel->setTable("task");
     qmodel->removeColumn(1);
-//    qmodel->removeColumn(4);
+
     qmodel->setHeaderData(0, Qt::Horizontal, "任务号");
     qmodel->setHeaderData(1, Qt::Horizontal, "任务描述");
     qmodel->setHeaderData(2, Qt::Horizontal, "开始日期");
@@ -73,8 +75,29 @@ void PunchOut::QueryTask(int persid)
 
 void PunchOut::on_pushButton_clicked()
 {
+    qmodel->database().transaction(); //开始事务操作
+    if (qmodel->submitAll()) // 提交所有被修改的数据到数据库中
+    {
+        qmodel->database().commit(); //提交成功，事务将真正修改数据库数据
+    } else {
+        qmodel->database().rollback(); //提交失败，事务回滚
+        QMessageBox::warning(this, tr("错误"),tr("数据库错误: %1").arg(qmodel->lastError().text()));
+    }
+
     QSqlQuery query;
     query.prepare("update punchreg set outtime = curtime() where persid = ? and date = curdate() ");
     query.addBindValue(login_persid);
     query.exec();
+}
+
+void PunchOut::on_pushButton_done_clicked()
+{
+    QDate date;
+    qmodel->setData(ui->tableView->currentIndex(), date.currentDate());
+}
+
+void PunchOut::on_pushButton_revert_clicked()
+{
+    qmodel->revertAll(); //撤销修改
+    QMessageBox::warning(this, tr("撤销成功"),tr("撤销成功"));
 }

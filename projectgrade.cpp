@@ -1,6 +1,6 @@
 #include "projectgrade.h"
 #include "ui_projectgrade.h"
-#include <QDebug>
+
 
 ProjectGrade::ProjectGrade(QWidget *parent) :
     QFrame(parent),
@@ -18,7 +18,6 @@ ProjectGrade::~ProjectGrade()
     delete ui;
 }
 
-//TODO 未完成，需要思考详细的打分原则
 void ProjectGrade::on_pushButton_clicked()
 {
     projectname = ui->comboBox->currentText();
