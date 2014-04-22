@@ -16,6 +16,11 @@ public:
     explicit Salary(QWidget *parent = 0);
     ~Salary();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_salary_clicked();
+
 private:
     Ui::Salary *ui;
 };

@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     perslevel.cpp \
     persgrade.cpp \
     task.cpp \
-    salary.cpp
+    salary.cpp \
+    salarydialog.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -44,7 +45,8 @@ HEADERS  += mainwindow.h \
     persgrade.h \
     task.h \
     salary.h \
-    extern.h
+    extern.h \
+    salarydialog.h
 
 FORMS    += mainwindow.ui \
     login.ui \
@@ -58,7 +60,8 @@ FORMS    += mainwindow.ui \
     perslevel.ui \
     persgrade.ui \
     task.ui \
-    salary.ui
+    salary.ui \
+    salarydialog.ui
 
 RESOURCES += \
     res.qrc

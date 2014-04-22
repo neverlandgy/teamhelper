@@ -52,7 +52,7 @@
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>主管评价：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -65,7 +65,7 @@
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>岗位级别：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -73,12 +73,12 @@
     <rect>
      <x>90</x>
      <y>170</y>
-     <width>54</width>
+     <width>71</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>任务完成度：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -86,12 +86,12 @@
     <rect>
      <x>90</x>
      <y>200</y>
-     <width>54</width>
+     <width>91</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>缺勤天数：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -104,7 +104,7 @@
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>项目分数：</string>
    </property>
   </widget>
   <widget class="QSlider" name="horizontalSlider">
@@ -113,143 +113,7 @@
      <x>180</x>
      <y>110</y>
      <width>160</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="singleStep">
-    <number>1</number>
-   </property>
-   <property name="pageStep">
-    <number>1</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="invertedAppearance">
-    <bool>true</bool>
-   </property>
-   <property name="invertedControls">
-    <bool>true</bool>
-   </property>
-   <property name="tickPosition">
-    <enum>QSlider::TicksBelow</enum>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider_2">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>140</y>
-     <width>160</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="singleStep">
-    <number>1</number>
-   </property>
-   <property name="pageStep">
-    <number>1</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="invertedAppearance">
-    <bool>true</bool>
-   </property>
-   <property name="invertedControls">
-    <bool>true</bool>
-   </property>
-   <property name="tickPosition">
-    <enum>QSlider::TicksBelow</enum>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider_3">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>170</y>
-     <width>160</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="singleStep">
-    <number>1</number>
-   </property>
-   <property name="pageStep">
-    <number>1</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="invertedAppearance">
-    <bool>true</bool>
-   </property>
-   <property name="invertedControls">
-    <bool>true</bool>
-   </property>
-   <property name="tickPosition">
-    <enum>QSlider::TicksBelow</enum>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider_4">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>200</y>
-     <width>160</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="maximum">
-    <number>5</number>
-   </property>
-   <property name="singleStep">
-    <number>1</number>
-   </property>
-   <property name="pageStep">
-    <number>1</number>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="invertedAppearance">
-    <bool>true</bool>
-   </property>
-   <property name="invertedControls">
-    <bool>true</bool>
-   </property>
-   <property name="tickPosition">
-    <enum>QSlider::TicksBelow</enum>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider_5">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>230</y>
-     <width>160</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="layoutDirection">
@@ -298,6 +162,58 @@
      <width>191</width>
      <height>81</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_joblevel">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>142</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_task">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>170</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_punch">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>200</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_project">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>230</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>742</width>
-    <height>401</height>
+    <width>755</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,33 +19,50 @@
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
-  <widget class="QDateEdit" name="dateEdit">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>70</y>
-     <width>130</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="displayFormat">
-    <string>yyyy/MM</string>
-   </property>
-   <property name="calendarPopup">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>70</y>
+     <x>270</x>
+     <y>60</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
     <string>查询</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>100</y>
+     <width>571</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_salary">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>60</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发放工资</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>60</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>
