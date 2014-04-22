@@ -10,7 +10,7 @@ SalaryDialog::SalaryDialog(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlQueryModel *qmodel=new QSqlQueryModel();
-    qmodel->setQuery("select pers.persname, perssalaryreg.perssalary from pers, perssalaryreg where pers.persid=perssalaryreg.persid and perssalaryreg.yearmonth = date_format(curdate(), '%Y%m')");
+    qmodel->setQuery("select pers.persname, perssalaryreg.perssalary, perssalaryreg.projectbonus, perssalaryreg.festivalbonus from pers, perssalaryreg where pers.persid=perssalaryreg.persid and perssalaryreg.yearmonth = date_format(curdate(), '%Y%m')");
     ui->tableView->setModel(qmodel);
 
     QSqlQueryModel *qmodel1=new QSqlQueryModel();
@@ -32,7 +32,7 @@ void SalaryDialog::on_buttonBox_accepted()
 void SalaryDialog::on_toolBox_currentChanged()
 {
     QSqlQueryModel *qmodel=new QSqlQueryModel();
-    qmodel->setQuery("select pers.persname, perssalaryreg.perssalary from pers, perssalaryreg where pers.persid=perssalaryreg.persid and perssalaryreg.yearmonth = date_format(curdate(), '%Y%m')");
+    qmodel->setQuery("select pers.persname, perssalaryreg.perssalary, perssalaryreg.projectbonus, perssalaryreg.festivalbonus from pers, perssalaryreg where pers.persid=perssalaryreg.persid and perssalaryreg.yearmonth = date_format(curdate(), '%Y%m')");
     ui->tableView->setModel(qmodel);
 }
 

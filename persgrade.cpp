@@ -103,6 +103,12 @@ void PersGrade::on_pushButton_clicked()
     query.addBindValue(projectgrade);
     query.addBindValue(persgrade);
     query.exec();
+
+    QSqlQuery query_salary;
+    query_salary.prepare("insert into perssalaryreg (persid, yearmonth, perssalary) values (?, date_format(curdate(), '%Y%m'), ?)");
+    query_salary.addBindValue(persid);
+    query_salary.addBindValue(persgrade*150);
+    query_salary.exec();
 }
 
 
