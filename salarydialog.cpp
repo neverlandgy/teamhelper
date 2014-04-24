@@ -42,13 +42,6 @@ void SalaryDialog::on_pushButton_clicked()
     QString projectname;
     projectname = ui->comboBox->currentText();
 
-//    QSqlQuery query_project;
-//    query_project.prepare("select projectid from project where projectname = ?");
-//    query_project.addBindValue(projectbonus);
-//    query_project.exec();
-//    query_project.next();
-//    project = query_project.value(0).toString();
-
     projectbonus = ui->lineEdit->text().toInt();
     QSqlQuery query;
     query.prepare("update perssalaryreg set projectbonus = ? where persid = (select persid from project, workreg where project.projectname = ? and project.projectid = workreg.projectid)");
