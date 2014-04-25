@@ -41,7 +41,7 @@ void DragListsWidget::performDrag()
 
         QDrag *drag = new QDrag(this);
         drag->setMimeData(mimeData);
-        drag->setPixmap(QPixmap(":/images/person.png"));
+        drag->setPixmap(QPixmap("/res/person.png"));
         if (drag->exec(Qt::MoveAction) == Qt::MoveAction)
             delete item;
     }
