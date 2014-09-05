@@ -1,6 +1,7 @@
 ﻿#include "login.h"
 #include "ui_login.h"
 
+int login_singal;
 int login_persid;
 QString login_mode;
 QString login_jobtyp;
@@ -49,6 +50,7 @@ void Login::on_pushButton_login_clicked()
         {
             QMessageBox::information(this, tr("错误"), tr("用户名或密码错误，请重新输入"), QMessageBox::Ok);
         }else{
+            login_singal=1;
             this->close();
         }
     }
@@ -57,5 +59,6 @@ void Login::on_pushButton_login_clicked()
 //退出
 void Login::on_pushButton_quit_clicked()
 {
+    login_singal=0;
     this->close();
 }

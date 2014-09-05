@@ -15,6 +15,7 @@
 #include "task.h"
 #include "salary.h"
 #include "extern.h"
+#include "login.h"
 
 namespace Ui {
 class MainWindow;

@@ -3,7 +3,7 @@
 #include "sqlconnection.h"
 #include <QApplication>
 #include <QtSql>
-
+#include <QDebug>
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
     Login log;
     log.exec();
 
+    if(login_singal == 0){
+        return app.exec();
+    }
     MainWindow win;
     win.show();
 

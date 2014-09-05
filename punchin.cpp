@@ -1,7 +1,7 @@
 #include "punchin.h"
 #include "ui_punchin.h"
-#include <QDebug>
 #include <QSqlTableModel>
+#include <QMessageBox>
 
 PunchIn::PunchIn(QWidget *parent) :
     QFrame(parent),
@@ -76,6 +76,10 @@ void PunchIn::on_pushButton_clicked()
     query.prepare("insert into punchreg (date, persid, intime) values (curdate(), ?, curtime())");
     query.addBindValue(login_persid);
     query.exec();
+    if(query.isActive()){
+        QMessageBox::information(this, tr("成功"), tr("签到成功"), QMessageBox::Ok);
+
+    }
 }
 
 

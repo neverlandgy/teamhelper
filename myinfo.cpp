@@ -18,7 +18,7 @@ MyInfo::~MyInfo()
 void MyInfo::QureyPers()
 {
     QSqlQuery querypers;
-    querypers.prepare("SELECT persname, jobtyp, workdate, sex, level FROM pers where persid = ?");
+    querypers.prepare("SELECT p.persname, p.jobtyp, p.workdate, p.sex, p.level, r.persgrade, max(r.yearmonth) month FROM pers as p, persgradereg as r where p.persid = ? and p.persid = r.persid;");
     querypers.addBindValue(login_persid);
     querypers.exec();
     querypers.next();
@@ -29,12 +29,13 @@ void MyInfo::QureyPers()
     QString workdate = querypers.value(2).toString();
     QString sex = querypers.value(3).toString();
     QString level = querypers.value(4).toString();
+    QString grade = querypers.value(5).toString();
 
     ui->label_6->setText(name);
     ui->label_7->setText(job);
     ui->label_8->setText(workdate);
     ui->label_9->setText(sex);
     ui->label_10->setText(level);
-
+    ui->label_12->setText(grade);
 
 }

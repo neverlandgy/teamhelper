@@ -1,6 +1,5 @@
 #include "perslevel.h"
 #include "ui_perslevel.h"
-#include <QDebug>
 
 PersLevel::PersLevel(QWidget *parent) :
     QFrame(parent),

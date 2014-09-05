@@ -14,7 +14,7 @@ Team::Team(QWidget *parent) :
     query_a.exec();
     while(query_a.next())
     {
-        ui->projectA->addItem(query_a.value(0).toString());
+        ui->projectB->addItem(query_a.value(0).toString());
     }
 
     QSqlQuery query_b;
@@ -22,7 +22,7 @@ Team::Team(QWidget *parent) :
     query_b.exec();
     while(query_b.next())
     {
-        ui->projectB->addItem(query_b.value(0).toString());
+        ui->projectA->addItem(query_b.value(0).toString());
     }
 
 }

@@ -88,6 +88,10 @@ void PunchOut::on_pushButton_clicked()
     query.prepare("update punchreg set outtime = curtime() where persid = ? and date = curdate() ");
     query.addBindValue(login_persid);
     query.exec();
+    if(query.isActive()){
+        QMessageBox::information(this, tr("成功"), tr("添加成功"), QMessageBox::Ok);
+
+    }
 }
 
 void PunchOut::on_pushButton_done_clicked()
